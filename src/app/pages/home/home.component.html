@@ -1,0 +1,6 @@
+<app-videoboard></app-videoboard>
+<app-categories
+*ngFor="let category of categories; let i = index"
+[category]="category"
+[index]="i"
+></app-categories>

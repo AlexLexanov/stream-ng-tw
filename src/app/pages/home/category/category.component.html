@@ -1,0 +1,12 @@
+<section class="pt-32">
+  <h1 class="text-white text-6xl ml-24 mb-10 font-bold">{{category.title}}</h1>
+  <div *ngFor="let films of category.films; let i = index">
+    <div class="grid grid-cols-5 mx-24 gap-3.5 my-5 relative" >
+      <app-view-map
+        *ngFor="let film of films"
+        (click)="preViewShow(film, i)"
+        [id]="film"></app-view-map>
+    </div>
+    <app-info-about-film *ngIf="id && index === i" [id]="id"></app-info-about-film>
+  </div>
+</section>

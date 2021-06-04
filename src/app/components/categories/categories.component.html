@@ -1,0 +1,21 @@
+<section class="categories">
+    <a [routerLink]="['/category', category.id]">
+      <h3>{{ category.title }}</h3>
+      <fa-icon [icon]="faChevronRight"></fa-icon>
+    </a>
+  <div>
+    <button *ngIf="btnLeft" (click)="ScrollXLeft()" type="button"><fa-icon [icon]="faChevronLeft"></fa-icon></button>
+    <div #overflowX class="no-scrollbar">
+        <app-view-map
+                *ngFor="let film of category.films | slice:0:10"
+                (click)="preViewShow(film)"
+                [id]="film"></app-view-map>
+      <a [routerLink]="['/category', category.id]">
+        <fa-icon [icon]="faChevronCircleRight"></fa-icon>
+        <p>Показать все</p>
+      </a>
+    </div>
+    <button *ngIf="btnRight" (click)="ScrollXRight()" type="button"><fa-icon [icon]="faChevronRight"></fa-icon></button>
+  </div>
+</section>
+<app-info-about-film *ngIf="id" [id]="id"></app-info-about-film>

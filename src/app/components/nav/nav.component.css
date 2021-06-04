@@ -1,0 +1,25 @@
+.main-nav {
+  background: rgba(0 ,0 , 0, 0);
+  @apply w-full top-0 fixed transition-all duration-500 ease-in z-40;
+}
+.main-nav.active {
+  @apply -top-40;
+}
+.main-nav.bg-opacity {
+  background: #141414;
+}
+.main-nav div {
+  @apply flex items-center justify-around h-20;
+}
+.main-nav .link {
+  @apply flex ml-8;
+}
+.main-nav .link a {
+  @apply px-6 mx-2 py-3 text-lg font-extrabold leading-5 transition border-b-2 border-transparent text-gray-500;
+}
+.main-nav .link:hover a {
+  @apply text-white;
+}
+.main-nav .link .active {
+  @apply border-b-2 text-gray-300 border-yellow-700;
+}

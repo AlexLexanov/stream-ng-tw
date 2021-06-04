@@ -1,0 +1,77 @@
+.categories {
+  @apply my-20;
+}
+.categories > a {
+  @apply text-white absolute pl-24 flex items-center z-40;
+}
+.categories > a h3 {
+  @apply text-3xl font-bold;
+}
+.categories > a *:last-child {
+  @apply transition-all delay-200 opacity-0 pl-0 invisible text-2xl mt-1;
+}
+.categories:hover > a *:last-child {
+  @apply visible opacity-100 pl-3;
+}
+.categories > div {
+  @apply flex items-center relative;
+}
+.categories > div > button {
+  height: var(--item-height);
+  @apply invisible absolute w-14 top-16 z-40 bg-black opacity-0 transform transition-all duration-500 ease-in-out;
+}
+.categories:hover > div > button {
+  @apply visible opacity-50 text-white pointer-events-auto text-xl;
+}
+.categories > div button:first-child {
+  @apply left-0 rounded-r-md ;
+}
+.categories > div button:last-child {
+  @apply right-0 rounded-l-md;
+}
+.categories > div div {
+  @apply pt-16 flex flex-auto relative overflow-x-auto;
+  margin-bottom: -18rem;
+  padding-bottom: 14rem;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+}
+.categories > div div app-view-map  {
+  flex-shrink: 0;
+  position: relative;
+  margin-left: 1.9rem;
+  scroll-snap-stop: normal;
+  scroll-snap-align: center;
+  height: var(--item-height);
+  width: var(--item-width, auto);
+  scroll-padding: var(--main-padding);
+}
+.categories > div div a  {
+  flex-shrink: 0;
+  margin-left: 1.9rem;
+  scroll-snap-stop: normal;
+  scroll-snap-align: center;
+  height: var(--item-height);
+  width: var(--item-width, auto);
+  scroll-padding: var(--main-padding);
+  @apply relative text-white text-center pt-10 focus:outline-none;
+}
+.categories > div div a :first-child {
+  @apply text-5xl;
+}
+.categories > div div a :last-child {
+  @apply text-xl mt-4;
+}
+.categories > div div *:first-child {
+  margin-left: -0.6rem !important;
+}
+.categories div:last-child div::before {
+  content: "";
+  flex: 0 0 var(--main-padding);
+}
+.categories > div div::after {
+  content: "";
+  margin-left: -.61rem;
+  flex: 0 0 var(--main-padding);
+}

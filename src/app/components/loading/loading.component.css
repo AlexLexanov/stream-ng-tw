@@ -1,0 +1,7 @@
+.loading-route {
+  @apply fixed bg-gradient-to-r bg-yellow-700 from-white w-0 transition-all duration-500 ease-in-out z-50;
+}
+.loading-route.active {
+  height: 1px;
+  @apply w-full;
+}

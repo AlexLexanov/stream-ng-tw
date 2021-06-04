@@ -1,0 +1,51 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+body {
+  background-color: #141414;
+}
+
+body::-webkit-scrollbar {
+  @apply w-1;
+}
+
+* {
+  @apply font-sans;
+}
+
+button:focus {
+  outline: none;
+}
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  @apply bg-yellow-700;
+}
+
+:root {
+  --item-size: 5;
+  --item-scale: scale(1.1);
+  --main-items-padding: 1.6rem;
+  --main-padding: 6rem;
+  --visible-items-size: calc(var(--item-size) - 1);
+  --item-width: calc((100% - var(--main-padding) * 2 - var(--main-items-padding) * var(--visible-items-size)) / var(--item-size));
+  --item-height: calc((100vw - var(--main-padding) * 2 - var(--main-items-padding) * var(--visible-items-size)) / var(--item-size) * 9 / 16);
+}
+
+
+@layer utilities {
+  @variants responsive {
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  }
+}
+

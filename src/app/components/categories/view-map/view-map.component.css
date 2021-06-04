@@ -1,0 +1,31 @@
+.view-map {
+  @apply flex items-center justify-center transform duration-200 delay-100 w-full h-full block z-20;
+}
+.view-map:hover {
+  transform: scale(1.03);
+}
+.view-map img {
+  @apply relative object-cover rounded-md;
+}
+.loader {
+  -webkit-animation: spinner 1.5s linear infinite;
+  animation: spinner 1.5s linear infinite;
+  @apply  ease-linear rounded-full border-4 border-t-4 border-yellow-500 mx-auto h-16 w-16 mb-4;
+  border-top-color: #fff;
+}
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

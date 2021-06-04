@@ -1,0 +1,6 @@
+<div observeVisibility
+     [debounceTime]="300"
+     (visible)="onVisible($event)" class="view-map">
+  <div *ngIf="!itemImageUrl" class="loader"></div>
+  <img [src]="itemImageUrl"  alt="">
+</div>
